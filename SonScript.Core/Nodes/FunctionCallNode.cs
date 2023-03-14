@@ -7,7 +7,7 @@ public class FunctionCallNode : FunctionNode
     private readonly Function _function;
     private readonly IReadOnlyList<FunctionNode> _arguments;
 
-    public static FunctionCallNode Empty(Function function) => new(function, Array.Empty<FunctionNode>());
+    public Function Function => _function;
 
     public FunctionCallNode(Function function, IReadOnlyList<FunctionNode> arguments)
     {
@@ -23,4 +23,6 @@ public class FunctionCallNode : FunctionNode
         // Call the function
         return _function.Evaluate(evaluatedArgs);
     }
+
+    public static FunctionCallNode Empty(Function function) => new(function, Array.Empty<FunctionNode>());
 }
