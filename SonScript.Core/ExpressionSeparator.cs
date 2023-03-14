@@ -13,6 +13,8 @@ public class ExpressionSeparator
 
     public List<string> Separate(string input)
     {
+        _sb.Clear();
+
         if (string.IsNullOrEmpty(input))
         {
             throw new ArgumentException("Input string cannot be null or empty.", nameof(input));
