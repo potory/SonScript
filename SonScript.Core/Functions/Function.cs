@@ -20,4 +20,19 @@ public abstract class Function
 
         return result;
     }
+
+    protected static int GetInt(object obj)
+    {
+        if (obj is int result)
+        {
+            return result;
+        }
+        
+        if (!int.TryParse(obj.ToString(), CultureInfo.InvariantCulture, out result))
+        {
+            throw new ArgumentException($"The provided object of type {obj.GetType()} is not a valid int or cannot be converted to a int using the InvariantCulture.");
+        }
+
+        return result;
+    }
 }
