@@ -42,6 +42,8 @@ public class FunctionFactory
         };
     }
 
+    public void ClearCache() => _cache.Clear();
+
     private Function CreateFunction<T>() where T: Function => 
         CreateFunction(typeof(T));
 
